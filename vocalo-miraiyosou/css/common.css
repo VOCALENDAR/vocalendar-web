@@ -1,0 +1,75 @@
+@charset "utf-8";
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: white;
+  font-size: 16pt;
+  line-height: 1.5em;
+}
+
+h2 {
+  margin: 3em 0 2em;
+}
+h3 {
+  margin: 2em 0 2em;
+}
+h4 {
+  margin: 2em 0 2em;
+}
+
+#container {
+  margin: 0 auto;
+  width: 800px;
+}
+
+#title {
+  margin: 4em 0 1em;
+}
+#rights {
+  margin: 0 0 2em;
+}
+#snsbuttons table {
+  margin: 0 auto;
+}
+#snsbuttons table td {
+  padding: 0 3px;
+}
+.fb-like {
+  top: -6px;
+}
+#description {
+	margin: 2em 0 0;
+	padding: 0 4em;
+	font-size: .85em;
+	line-height: 1.5em;
+}
+#slideshare {
+  margin: 3em 0 2em;
+}
+#slidesharecredit,
+#slidesharecredit a {
+  margin: .5em 0;
+  font-size: .85em;
+  color: gray;
+}
+h2#staff {
+  margin: 6em 0 1em;
+}
+#stafflist {
+  margin: 0 0 2em;
+}
+#credits {
+  margin: 3em 0 3em;
+}
+#links,
+#links a {
+  margin: 0 0 3em;
+  font-size: .85em;
+  color: gray;
+  text-decoration: underline;
+}
+
+.postit {
+  margin-bottom: 1em;
+}

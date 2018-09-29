@@ -1,0 +1,3 @@
+[submodule "search"]
+	path = search
+	url = https://github.com/yajiuma/vocalendar-search.git

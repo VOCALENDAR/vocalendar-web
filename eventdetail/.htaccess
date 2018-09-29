@@ -1,0 +1,4 @@
+<Files ~ "\.(html|htm|jpg|jpeg|gif|png|css)>
+	Header set Pragma no-cache
+	Header set Cache-Control no-cache
+</Files>

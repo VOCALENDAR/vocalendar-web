@@ -1,0 +1,511 @@
+<!DOCTYPE html> 
+<html lang="ja"> 
+<head> 
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1"> 
+<title>VOCALENDAR for Android</title> 
+<meta name="viewport" content="width=device-width, initial-scale=1"> 
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css" />
+<link rel="stylesheet" href="style.css" />
+<script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+<script src="custom-scripting.js"></script>
+<script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
+</head> 
+<body> 
+<div data-role="page" id="main">
+  <div data-role="header"><h3>VOCALENDAR for Android</h3></div>
+  <div data-role="content">
+    <h3>VOCALENDAR for Android について</h3>
+    <p>
+      VOCALENDAR(ボカレンダー) for Androidは、
+      ボーカロイド関連イベントの予定日を集めたカレンダー
+      <a href="http://vocalendar.jp/about/" data-ajax="false">VOCALENDAR（ボカレンダー）</a>
+      公式のAndroidアプリです。
+      このアプリを起動すると、VOCALENDARに掲載された
+      ボーカロイド関連イベントを確認することができます。
+    </p>
+    <p>
+      以下のような機能があります。
+      <ul>
+	<li>今日を含めた3日間（設定で変更可能）のイベントの一覧を確認</li>
+	<li>イベントの詳細を確認</li>
+	<li>指定した日付のイベントの確認</li>
+	<li>イベントをキーワードで検索</li>
+	<li>お気に入りのイベントの登録と参照</li>
+	<li>イベントの共有（メールやTwitterなどで送る）</li>
+	<li>イベントの取り込み（自分のカレンダーに登録）</li>
+      </ul>
+    </p>
+
+    <ul data-role="listview" data-inset="true">
+      <li><a href="#basic_usage">基本的な使い方</a></li>
+    </ul>
+    
+    <h3>画面の説明</h3>
+    <ul data-role="listview" data-inset="true">
+      <li><a href="#event_list">イベント一覧</a></li>
+      <li><a href="#event_detail">イベント詳細</a></li>
+      <li><a href="#event_search">イベント検索</a></li>
+      <li><a href="#loading">イベント読み込み</a></li>
+      <li><a href="#favorite">お気に入り一覧</a></li>
+      <li><a href="#setting">設定</a></li>
+      <li><a href="#notification">イベント通知</a></li>
+    </ul>
+    <ul data-role="listview" data-inset="true">
+      <li><a href="#history">変更履歴</a></li>
+    </ul>
+  </div>
+</div>
+
+<div data-role="page" id="basic_usage">
+  <div data-role="header">
+    <a href="#main" data-rel="back">戻る</a>
+    <h3>基本的な使い方</h3>
+  </div>
+  <div data-role="content">
+    <p>
+      VOCALENDAR for Androidを起動すると、
+      VOCALENDARに掲載されているイベント情報を読み込みます。
+    </p>
+    <img src="img/loading_ss.png"/>
+    <p>
+      読み込みが終わると、今日を含めた3日間のイベント一覧が表示されます。
+      表示する日数は設定で変更できます。
+    </p>
+    <img src="img/list_ss.png" />
+    <p>
+      イベントを表示する日付を変えたいときは「日付変更」ボタン(画面下のカレンダー型アイコン)を押します。
+      日付選択ダイアログで、表示させたい日付を選択して「OK」ボタンを押します。
+    </p>
+    <img src="img/change_date_ss.png" />
+    <p>
+      イベントの詳細を確認するには、イベントをタップします。
+      タップしたイベントの詳細が表示されます。
+    </p>
+    <img src="img/detail_ss.png" />
+    <p>
+      「&lt;」ボタンと「&gt;」ボタンを押すと、前後のイベントの詳細を
+      表示できます。スワイプ操作でも前後のイベントを表示できます。
+    </p>
+    <p>
+      イベントの詳細を表示している時に「共有」ボタンを押すと、
+      イベントの名前やイベント詳細へのURLを他のアプリに送って、
+      イベント情報を他の人と共有できます。
+      例えば、Twitterアプリに送ればイベント情報をツイートできます。
+      メールアプリに送れば、イベント情報をメールできます。
+    </p>
+    <p>
+      「取込」ボタンを押すと、イベント情報を自分のカレンダー（予定）に
+      取り込むことができます。
+    </p>
+    <p>
+      イベントの詳細表示からイベント一覧に戻るには、
+      戻るボタン（ホームボタンの横にあるボタン）を押します。
+      または、画面左上のアプリアイコンを押します。
+    </p>
+  </div>
+</div>
+
+<div data-role="page" id="event_list">
+  <div data-role="header">
+    <a href="#main" data-rel="back">戻る</a>
+    <h3>イベント一覧</h3>
+  </div>
+  <div data-role="content">
+    <p>イベントの一覧を表示します。</p>
+    <img src="img/list.png" />
+    <h3>画面の説明</h3>
+    <ol>
+      <li>イベント：タップすると<a href="#event_detail">イベント詳細</a>を表示します</li>
+      <li>お気に入り：そのイベントがお気に入りかどうかを表示します。タップするとお気に入りに入れます。もう一度タップするとお気に入りから外します</li>
+      <li>「今日」ボタン：今日のイベントに表示位置をスクロールします</li>
+      <li>「日付変更」ボタン：イベントを表示する日付を変更します</li>
+      <li>「お気に入り」ボタン：<a href="#favorite">お気に入り一覧</a>を開きます</li>
+      <li>「更新」ボタン：イベントを最新の情報に更新します</li>
+      <li>検索ボタン：タップすると、<a href="#event_search">イベント検索</a>を開きます。</li>
+      <li>メニューボタン：タップすると、メニューを開きます。</li>
+      <li>「タップしてもっと読み込む」：タップすると、この先の日付のイベントを読み込みます</li>
+    </ol>
+    <h3>メニューの説明</h3>
+    <img src="img/list2.png" />
+    <ol>
+      <li>設定：<a href="#setting">設定</a>を開きます</li>
+      <li>ヘルプ：ヘルプを開きます</li>
+      <li>このアプリについて：VOCALENDAR for Androidについての説明を表示します</li>
+      <li>vocalendar.jpを開く：VOCALENDARのWebサイトを開きます</li>
+      <li>お知らせ：VOCALENDARからのお知らせを表示します</li>
+    </ol>
+  </div>
+</div>
+
+<div data-role="page" id="event_detail">
+  <div data-role="header">
+    <a href="#main" data-rel="back">戻る</a>
+    <h3>イベント詳細</h3>
+  </div>
+  <div data-role="content">
+    <p>イベントの詳細を表示します。
+      画面を横方向にスワイプすると、前後のイベントに移動できます。</p>
+    <img src="img/detail1.png" />
+    <h3>画面の説明</h3>
+    <ol>
+      <li>アプリアイコン：タップするとイベント一覧画面に戻ります</li>
+      <li>「&lt;」ボタン：前のイベントを表示します</li>
+      <li>「共有」ボタン：イベントの名前やイベント詳細へのURLを
+	他のアプリに送って、イベント情報を他の人と共有できます</li>
+      <li>「取込」ボタン：イベント情報を自分のカレンダー（予定）に
+	取り込むことができます
+	(Android 4.0未満は未対応のため、ボタンを表示しません)</li>
+      <li>「&gt;」ボタン：後のイベントを表示します</li>
+      <li>地図リンク：その場所を地図アプリ(Googleマップなど)で表示します。
+	場所の情報がないイベントの場合は表示されません。
+      </li>
+      <li>お気に入り：そのイベントがお気に入りかどうかを表示します。
+	タップするとお気に入りに入れます。
+	もう一度タップするとお気に入りから外します
+      </li>
+    </ol>
+    <img src="img/detail2.png" />
+    <p>8. リンク：そのURLを開きます。場所の情報がURLの場合に表示されます。
+  </div>
+</div>
+
+<div data-role="page" id="event_search">
+  <div data-role="header">
+    <a href="#main" data-rel="back">戻る</a>
+    <h3>イベント検索</h3>
+  </div>
+  <div data-role="content">
+    <p>イベントをキーワードで検索できます</p>
+    <img src="img/search.png" />
+    <h3>画面の説明</h3>
+    <ol>
+      <li>アプリアイコン：タップするとイベント一覧画面に戻ります。</li>
+      <li>テキストフィールド：ここに検索キーワードを入力します。</li>
+      <li>「【】」ボタン：イベント名のタグ(【CD】など)をテキストフィールドに素早く入力できます。表示される一覧から入力するタグを選ぶことができます。</li>
+      <li>検索ボタン：テキストフィールドに入力されたキーワードでイベントを検索します。</li>
+      <li>イベント：タップするとイベントの詳細を表示できます。</li>
+      <li>「タップしてもっと検索する」：タップすると、さらにイベントを検索できます。</li>
+    </ol>
+  </div>
+</div>
+
+<div data-role="page" id="loading">
+  <div data-role="header">
+    <a href="#main" data-rel="back">戻る</a>
+    <h3>イベント読み込み</h3>
+  </div>
+  <div data-role="content">
+    <p>
+      VOCALENDARに掲載されているイベント情報を読み込むときに表示されます。
+    </p>
+    <img src="img/loading.png" />
+    <p>
+      このアプリは、日付が変わってから初めて起動すると
+      イベント情報を読み込みます。
+      <a href="#event_list">イベント一覧</a>で「更新」ボタンを
+      押したときにも、イベント情報が読み込まれます。
+    </p>
+    <h3>画面の説明</h3>
+    <ol>
+      <li>表示部：壁紙やアニメーションを表示します。
+	VOCALENDARからのお知らせがある場合は、それを表示します</li>
+      <li>「キャンセル」ボタン：イベント情報の読み込みを中断します</li>
+    </ol>
+  </div>
+</div>
+
+<div data-role="page" id="favorite">
+  <div data-role="header">
+    <a href="#main" data-rel="back">戻る</a>
+    <h3>お気に入り一覧</h3>
+  </div>
+  <div data-role="content">
+    <p>
+      お気に入りに入れたイベントの一覧を表示します。
+    </p>
+    <p>
+      今日と今日以降のお気に入りのイベントを表示します。
+      今日より前のイベントを表示するには、日付変更ボタンや
+      「タップしてもっと読み込む」をタップします。
+    </p>
+    <img src="img/favorite.png" />
+    <h3>画面の説明</h3>
+    <ol>
+      <li>イベント：タップすると<a href="#event_detail">イベント詳細</a>を表示します</li>
+      <li>お気に入り：そのイベントがお気に入りかどうかを表示します。タップするとお気に入りに入れます。もう一度タップするとお気に入りから外します</li>
+      <li>「今日」ボタン：今日のイベントに表示位置をスクロールします</li>
+      <li>「日付変更」ボタン：指定した日付とその後のお気に入りイベントを表示します</li>
+      <li>「イベント一覧」ボタン：<a href="#event_list">イベント一覧</a>を開きます</li>
+      <li>「更新」ボタン：イベントを最新の情報に更新します</li>
+      <li>「タップしてもっと読み込む」：
+	タップすると、今日より前のお気に入りイベントを表示します</li>
+    </ol>
+  </div>
+</div>
+
+<div data-role="page" id="setting">
+  <div data-role="header">
+    <a href="#main" data-rel="back">戻る</a>
+    <h3>設定</h3>
+  </div>
+  <div data-role="content">
+    <p>
+      VOCALENDAR for Androidの設定を変更できます。
+    </p>
+    <h3>設定項目の説明</h3>
+    <ol>
+      <li>取得イベント日数：
+	イベント一覧に表示するイベントの日数を変更できます</li>
+      <li>もっと読み込む時の取得日数：
+	イベント一覧でもっと読む混む時に読み込むイベントの日数を変更できます</li>
+      <li>タップなしでもっと読み込む：
+	チェックボックスをオンにすると、イベント一覧で一番上や下に
+	スクロールすると、タップなしでイベントを読み込みます</li>
+      <li>もっと検索する時の取得件数：
+	イベント検索で、「タップしてもっと検索する」ときに読み込む件数を
+	変更できます</li>
+      <li>読み込み画面の表示：
+	イベント読み込み画面に表示する内容を変更できます</li>
+      <li>読み込み画面のプレビュー：
+	「読み込み画面の表示」に設定した内容をプレビュー表示で確認できます</li>
+      <li>カラー・テーマ：
+	画面の<a href="#color_theme">カラー・テーマ</a>
+	(イベント一覧画面などの配色)を変更できます</li>
+      <li>カスタム・カラー・テーマ編集：
+	<a href="#custom_color_theme">カスタム・カラー・テーマ編集画面</a>を
+	開いて、オリジナルのカラー・テーマを作ることができます</li>
+      <li>イベント通知を実行する時間：
+	お気に入りや★印のイベントの通知を毎日実行する時間を指定できます</li>
+      <li>お知らせは一回のみ表示：
+	チェックを外すと、VOCALENDARからのお知らせがある場合、
+	読み込み中画面を開くときは常にお知らせを表示します。
+      	チェックを入れると、お知らせは一回だけ表示します。
+      </li>
+      <li>戻る：
+	イベント一覧に戻ります</li>
+    </ol>
+  </div>
+</div>
+
+<div data-role="page" id="notification">
+  <div data-role="header">
+    <a href="#main" data-rel="back">戻る</a>
+    <h3>イベント通知</h3>
+  </div>
+  <div data-role="content">
+    <p>
+      お気に入りに入れたイベントや★印のイベントがある日に、
+      そのイベントを通知します。
+    </p>
+    <img src="img/notification.png" /><br/>
+    <p>
+      毎日決まった時間に、今日のお気に入りイベントや★印イベントを、
+      画面の一番上のステータス・バーでお知らせします。
+    </p>
+    <p>
+      イベントを通知する時間は、<a href="#setting">設定</a>で
+      変更することができます。
+    </p>
+    <p>
+      ステータス・バーを下にスワイプすると、イベントの件数やイベント名を
+      確認できます。タップすると、VOCALENDAR for Androidを開きます。
+    </p>
+  </div>
+</div>
+
+<div data-role="page" id="color_theme">
+  <div data-role="header">
+    <a href="#setting" data-rel="back">戻る</a>
+    <h3>VOCALENDAR for Android</h3>
+  </div>
+  <div data-role="content">
+    <h3>カラー・テーマ</h3>
+    <p>
+      カラー・テーマは、イベント一覧やイベント詳細などの画面の色を
+      変更できる機能です。
+    </p>
+    <h3>カラー・テーマの一覧</h3>
+    <p>
+      デフォルト：基本の配色です<br/>
+      <img src="img/theme_default.png" />
+    </p>
+    <p>
+      初音ミク：初音ミクの色を意識した配色です<br/>
+      <img src="img/theme_miku.png" />    
+    </p>
+    <p>
+      カスタム・カラー・テーマ：オリジナルの配色を作ることができます<br/>
+      設定画面から、
+      <a href="#custom_color_theme">カスタム・カラー・テーマ編集画面</a>を
+      開くと、配色を自由に変更できます。
+    </p>
+  </div>
+</div>
+
+<div data-role="page" id="custom_color_theme">
+  <div data-role="header">
+    <a href="#main" data-rel="back">戻る</a>
+    <h3>カスタム・カラー・テーマ編集</h3>
+  </div>
+  <div data-role="content">
+    <p>
+      オリジナルの配色のカラー・テーマを作ることができます。
+    </p>
+    <img src="img/custom_color_theme1.png" /><br/>
+    <img src="img/custom_color_theme2.png" /><br/>
+    <h3>画面の説明</h3>
+    <ol>
+      <li>プレビュー：指定した配色でイベント覧画面をプレビュー表示します</li>
+      <li>配色：タップすると<a href="#color_picker">色選択ダイアログ</a>を
+	開き、その色を変更できます</li>
+      <li>カラー・テーマを取り込む：他のカラー・テーマの配色を
+	取り込むことができます</li>
+      <li>外部出力／取込：カスタム・カラー・テーマを他の端末に出力したり、
+	他の端末で指定した配色を取り込むことができます。
+      </li>
+      <li>戻る：設定画面に戻ります</li>
+    </ol>
+  </div>
+</div>
+
+<div data-role="page" id="color_picker">
+  <div data-role="header">
+    <a href="#custom_color_theme" data-rel="back">戻る</a>
+    <h3>色選択ダイアログ</h3>
+  </div>
+  <div data-role="content">
+    <p>
+      カスタム・カラー・テーマに指定する選択します。
+    </p>
+    <img src="img/color_picker.png" /><br/>
+    <h3>画面の説明</h3>
+    <ol>
+      <li>色エリア：指定したい色をタップします</li>
+      <li>色相：色エリアに表示したい色相をタップします</li>
+      <li>色コード：選択した色を16進数(#RRGGBB)で表示します。
+	16進数を直接入力することもできます</li>
+      <li>選択前の色：選択前の色を表示します</li>
+      <li>選択した色：色エリアで選択した色を表示します。ここをタップすると、
+	選択した色を適用します。
+      </li>
+    </ol>
+  </div>
+</div>
+
+
+<div data-role="page" id="history">
+  <div data-role="header">
+    <a href="#main" data-rel="back">戻る</a>
+    <h3>変更履歴</h3>
+  </div>
+  <div data-role="content">
+    <h3>VOCALENDAR for Androidの変更履歴</h3>
+    <ul>
+      <li>2018/05/12 Version 1.1.2
+	<ul>
+	  <li>イベント詳細画面でハイパーリンクが正しく表示されない場合があるのを修正</li>
+	  <li>イベント取得に使うサーバからGoogleカレンダーを削除。合わせてGoogleアカウントの設定も削除</li>
+          <li>Android 2.2.x(FROYO)のサポート終了</li>
+	</ul>
+      </li>
+      <li>2014/12/14 Version 1.1.1
+	<ul>
+	  <li>
+	    イベント情報詳細画面で共有ボタンを押した時に出るリンクを修正(Googleカレンダーの詳細ページに変更)
+	  </li>
+	</ul>
+      </li>
+      <li>2014/6/21 Version 1.1.0
+	<ul>
+	  <li>
+	    イベント情報を取得するサーバを、GoogleカレンダーからVOCALENDAR COREに変更(デフォルト)
+	  </li>
+	  <li>
+	    設定に、イベント情報を取得するサーバを切り替える設定項目を追加
+	  </li>
+	</ul>
+      </li>
+      <li>2014/6/21 Version 1.0.4
+	<ul>
+	  <li>
+	    アプリが応答しなくなる場合がある不具合の修正
+	  </li>
+	  <li>
+	    その他、細かい仕様修正
+	  </li>
+	</ul>
+      </li>
+      <li>2014/4/13 Version 1.0.3
+	<ul>
+	  <li>
+	    不具合修正：
+	    イベント検索やお気に入り一覧からイベント詳細を開いたときに
+	    「共有」「取込」でアプリが落ちる場合がある不具合を修正
+	  </li>
+	</ul>
+      </li>
+      <li>2014/3/8 Version 1.0.1
+	<ul>
+	  <li>「★イベントをイベント通知する」設定を追加(デフォルトON)</li>
+	  <li>誤字の修正</li>
+	</ul>
+      </li>
+      <li>2014/3/1 Version 1.0.0
+	<ul>
+	  <li>UIデザインの更新</li>
+	  <li>お気に入り機能の追加</li>
+	  <li>イベント通知機能の追加</li>
+	  <li>カラーテーマ機能の追加</li>
+	  <li>その他、細かい不具合の修正</li>
+	</ul>
+      </li>
+      <li>2013/9/30 Version 0.98.1
+	<ul>
+	  <li>イベント検索結果において、日付区切りとイベントの位置が不正な場合があるのを修正</li>
+	  <li>その他、細かい文言やレイアウトの修正</li>
+	</ul>
+      </li>
+      <li>2013/9/26 Version 0.98.0
+	<ul>
+	  <li>イベント検索機能の追加</li>
+	  <li>画面左上にホームボタンを追加</li>
+	  <li>通信エラー発生時に読み込み中画面から動かない場合があるのを修正</li>
+	</ul>
+      </li>
+      <li>2013/8/24 Version 0.97.0
+	<ul>
+	  <li>イベント詳細画面から地図を開く機能の追加</li>
+	  <li>通信エラー発生時に挙動がおかしい場合があるのを修正</li>
+	</ul>
+      </li>
+      <li>2013/7/21 Version 0.96.0
+	<ul>
+	  <li>「イベントをもっと読み込む」機能の追加</li>
+	  <li>読み込み中画面で落ちる場合がある不具合の修正</li>
+	</ul>
+      </li>
+      <li>2013/4/13 Version 0.95.61
+	<ul>
+	  <li>不具合修正：イベントが重複して表示される場合がある不具合を修正</li>
+	</ul>
+      </li>
+      <li>2013/4/3 Version 0.95.6
+	<ul>
+	  <li>読み込み画面にドット絵アニメーションを追加</li>
+	  <li>読み込み画面の表示形式を4種類（ランダム、壁紙、ドット絵、なし）から選択可能に</li>
+	  <li>読み込み画面のプレビュー機能を設定画面に追加</li>
+	  <li>細かい不具合の修正</li>
+	</ul>
+      </li>
+      <li>2013/2/8 Version 0.95.5
+	<ul>
+	  <li>Google Playに公開</li>
+	</ul>
+      </li>
+    </ul>
+  </div>
+</div>
+
+</body>
+</html>

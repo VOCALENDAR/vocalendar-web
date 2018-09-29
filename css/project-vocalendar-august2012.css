@@ -1,0 +1,949 @@
+@charset "utf-8";
+
+/*** プルダウンカスタマイズ用 ***/
+@import "dropkick.css";
+
+/*** 汎用クラス ***/
+.bold { font-weight:bold; }
+.red { color:#ff4444; }
+.gray { color:#777777; }
+
+/*** CLEARFIX ***/
+.clearfix:after {
+	display:block;
+	clear:both;
+	height:0px;
+	visibility:hidden;
+	content:".";
+}
+.clearfix {
+	min-height: 1px;
+}
+* html .clearfix {
+	height: 1px;
+	/*¥*//*/
+	height: auto;
+	overflow: hidden;
+	/**/
+}
+
+
+/*** 本体 ***/
+body {
+	font-family: sans-serif;
+	position: relative; display: block;
+	margin: 0; padding: 0;
+	background-image: url(../images/vocalendar-bg-revb.gif);
+	background-position:top center;
+	background-repeat:repeat;
+	-webkit-text-size-adjust:none; }
+
+#vocalendarCNT {
+	position: relative; display: block;
+	margin: 0 auto; padding: 0px 25px 35px;
+	width: 1150px;
+}
+
+
+/*** 新ヘッダ ***/
+header {
+	position: relative; display: block;
+	margin: 0 auto; padding: 0;
+	width: 1150px; height: 88px; }
+#vocalendarTitle {
+	position: absolute; display: block;
+	margin: 0; padding: 0;
+	width: 381px; height: 36px;
+	top: 26px; left: 0px;
+	text-indent: -9999px;
+	overflow: hidden; }
+#vocalendarTitle a {
+	position: relative; display: block;
+	margin: 0; padding: 0;
+	width: 381px; height: 36px;
+	background-image: url(../images/vocalendar-titlelogo-revc.png);
+	background-repeat: no-repeat;
+	text-indent: -9999px;
+	overflow: hidden;
+	cursor: pointer;
+}
+nav {
+	position: absolute; display: block;
+	margin: 0; padding: 0;
+	left: 350px; }
+nav ul li {
+	position: relative; display: block;
+	margin: 0; padding: 0;
+	list-style-type: none;
+	background-image: url(../images/vocalendar-titlelogo-revb.png);
+	background-repeat: no-repeat;
+	float: left; }
+nav ul li a {
+	position: relative; display: block;
+	margin: 0; padding: 0;
+	background-image: url(../images/vocalendar-titlelogo-revb.png);
+	background-repeat: no-repeat;
+	overflow: hidden;
+	cursor: pointer;
+	text-indent: -9999px;
+	filter: alpha(opacity=0);
+	-moz-opacity:0;
+	opacity: 0; }
+nav ul li#nav01 {
+	width: 83px; height: 88px;
+	background-position: -381px 0; }
+nav ul li#nav02 {
+	width: 130px; height: 88px;
+	background-position: -464px 0; }
+nav ul li#nav03 {
+	width: 92px; height: 88px;
+	background-position: -594px 0; }
+nav ul li#nav01 a {
+	width: 83px; height: 88px;
+	background-position: -381px -88px; }
+nav ul li#nav02 a {
+	width: 130px; height: 88px;
+	background-position: -464px -88px; }
+nav ul li#nav03 a {
+	width: 92px; height: 88px;
+	background-position: -594px -88px; }
+
+/*** 真サーチ ***/
+#searchCNT {
+	position: absolute; display: block;
+	margin: 0; padding: 0;
+	left: 550px; top: 35px;
+	z-index: 100;
+}
+#VS_searchstring {
+	position: relative; display: inline;
+	margin: 0 0 0 10px; padding: 0 5px;
+	height: 28px; width: 135px; line-height: 100%;
+	font-size: 14px; color: #666666;
+	border: 1px solid #cccccc;
+	border-radius: 2px;
+	box-shadow: 0px 1px 0px white;
+}
+#VS_execute {
+	position: relative; display: inline;
+	margin: 0; padding: 0 10px;
+	height: 30px; line-height: 28px;
+	font-size: 14px; color: #666666;
+	border: 1px solid #cccccc;
+	border-radius: 2px;
+	box-shadow: 0px 1px 0px white;
+background: #e5e5e5; /* Old browsers */
+background: -moz-linear-gradient(top,  rgba(255,255,255,1) 0%, rgba(229,229,229,1) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,1)), color-stop(100%,rgba(229,229,229,1))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%); /* IE10+ */
+background: linear-gradient(to bottom,  rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%); /* W3C */
+  -webkit-transition: border-color .5s;
+  -moz-transition: border-color .5s;
+  -o-transition: border-color .5s;
+  transition: border-color .5s;
+}
+#VS_execute:hover {
+	border: 1px solid #aaaaaa;
+	box-shadow: 0px 0px 2px #999999;
+}
+#VS_execute:active {
+	border: 1px solid #999999;
+	box-shadow: 0px 0px 1px black inset;
+}
+
+
+/*** 新カレンダコンテナ ***/
+#googleCalCNT {
+	position: relative; display: block;
+	margin: 32px auto 0; padding: 0;
+	width: 1150px;
+	background-color: transparent; }
+#googleCalCNT iframe {
+	position: relative; display: block;
+	margin: 0; padding: 0;
+	box-shadow: 0px 1px 0px white;
+	z-index: 1;
+	background-color: transparent; }
+
+/*** 新フッタ ***/
+footer {
+	clear: both;
+	position: relative; display: block;
+	margin: 20px auto 20px; padding: 20px;
+	width: 1110px;
+	font-size: 11px; line-height:150%;
+	background-color: rgba(240,240,240,0.25);
+	border-radius: 7px;
+	box-shadow: 0px 1px 0px white, 0px -1px 0px #d0d0d0;
+	text-shadow: 0px 1px 0px white;
+	color:#aaaaaa; }
+footer a {
+	color:#888888; text-decoration: none; }
+
+/*** 新エルロワエリア ***/
+#elrowaCNT {
+	position: absolute; display: block;
+	right: -40px; top: 0px;
+	width: 400px; height: 670px;
+	overflow: hidden;
+}
+#elrowaCNT img {
+	width: 400px;
+	right: 0px; bottom: 0px;
+	position: absolute; display: block;
+	visibility: visible;
+}
+#elrowaCNT .credit {
+	position: absolute; display: block;
+	right: 70px; bottom: 25px;
+	font-size: 10px; font-weight: normal; line-height: 100%;
+	color: gray; text-shadow: 0px 1px 0px white;
+}
+#elrowaCNT .credit a {
+	color: #666666; text-decoration: underline;
+}
+/*** GL（グランドレベル） ***/
+#glOS {
+	position: absolute;
+	right: 25px; top: 0px;
+	width: 252px;
+	height: 770px;
+}
+#glCNT {
+	position: absolute; display: block;
+	margin: 0; padding: 20px 20px 10px;
+	width: 210px;
+	bottom: 0; right: 0;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+	background-color: rgba(255,255,255,0.5);
+}
+#glCNT #glCNTabout {
+	position: relative; display: block;
+	margin: 0 0 10px; padding: 0;
+	font-size: 12px; color: #444444;
+	font-weight: bold;
+	line-height: 135%;
+	text-shadow: 0px 1px 0px white;
+}
+#glCNT #glCNTnotice {
+	position: relative; display: block;
+	margin: 0 0 10px; padding: 0 0 10px;
+	font-size: 11px; color: #776666; line-height: 140%;
+	text-shadow: 0px 1px 0px white;
+	border-bottom: 1px solid #cccccc;
+	box-shadow: 0px 1px 0px white;
+}
+#glCNTnotice strong {
+	font-weight: bold; color: #ff6666;
+}
+#glCNTtwitterAbout {
+	position: relative; display: block;
+	margin: 0 0 10px; padding: 0;
+	font-size: 11px; color: #776666; line-height: 140%;
+	text-shadow: 0px 1px 0px white;
+}
+#glCNTtwitterBTN {
+	width: 250px;
+	margin-left: -20px;
+	text-align: center;
+}
+
+
+#bodyContainer {
+	position: relative;
+	display: block;
+	margin: 0px; padding: 0px 0 30px;
+	background-color: white;
+	/*background-image: url(../images/vocalendar-bg-sakura.jpg);
+	background-position: bottom center;
+	background-repeat: repeat-x;*/
+	/*min-width: 1280px;*/ }
+
+#VCLbody {
+	position: relative; display: block;
+	margin: 0 auto; padding: 0 0 0 20px;
+	font-family: sans-serif;
+	width: 1150px; }
+
+
+
+/*** ナビゲーション ***/
+#VCLnavi {
+	position: fixed; display: block;
+	width: 100%; bottom:0px;
+	background-color: #d0d0d0;
+	border-bottom: 1px solid #b0b0b0;
+	box-shadow: 0px -5px 0px rgba(0,0,0,0.6);
+	z-index: 2;
+}
+#VCLnavi.top {
+}
+#VCLnaviCNT {
+	position: relative; display: block;
+	width: 1150px;
+	margin: 0 auto; padding: 0 25px;
+	background-color: #d0d0d0;
+}
+#VCLnaviContainer {
+	position: relative; display: block;
+	width: 1150px; height:32px;
+	margin: 0; padding: 0 0;
+}
+#VCLnaviLogo {
+	position: absolute; display: block;
+	margin: 2px 0 0; padding: 0 10px 0 0;
+	width: 136px; height: 28px;
+	border-right: 1px solid #bbb;
+	background-image: url(../images/vocalendar-small.gif);
+	background-position: left center;
+	background-repeat: no-repeat; }
+#bannerCNT {
+	position: relative; display: block;
+	margin: 0; padding: 10px 0;
+	height: 90px;
+	border-top: 1px solid #bbb;
+}
+#bannerCNT img {
+	position: relative; display: block;
+	margin: 0; padding: 0;
+	/*box-shadow: 0px 0px 5px gray;*/
+	float: left;
+}
+#bannerRight {
+	position: absolute;
+	display: block;
+	margin: 0; padding: 0;
+	right: 0;
+	width: 570px;
+}
+#bannerRight a {
+	opacity: 0;
+	-moz-opacity: 0;	
+}
+#VCLnavi.noad #bannerCNT {
+	display: none;
+}
+#VCLnavi.noad #actionBTN {
+	display: none;
+}
+
+#aboutArea {
+	position: relative;
+	display: block;
+	width: 280px;
+	margin: 0 20px 0 0;
+	padding: 0 20px 0 0;
+	float: left;
+	border-right: 1px solid #bbb;
+}
+#aboutArea #glCNTabout {
+	margin: 0 0 10px;
+	font-size: 12px; color: #444444;
+	font-weight: bold;
+	line-height: 135%;
+}
+#aboutArea #glCNTnotice {
+	font-size: 11px;
+	color: #776666;
+	line-height: 140%;
+}
+#footernavArea {
+	position: relative;
+	display: block;
+	width: 250px;
+	margin: 0 10px 0 0;
+	padding: 0;
+	color: gray;
+	line-height: 100%;
+	float: left;
+}
+#footernavArea .menu {
+	margin: 0 0 3px;
+	font-size: 14px;
+	color: #444444;
+	font-weight: bold;
+	line-height: 120%;
+}
+#footernavArea .node {
+	margin: 0;
+	color: gray;
+	line-height: 115%;
+	vertical-align: top;
+}
+#footernavArea a {
+	font-size: 12px;
+	color: #444444;
+	font-weight: bold;
+	color: #776666;
+}
+
+
+#VCLstatus {
+	position: absolute; display: block;
+	margin: 0; padding: 0 10px 0 0;
+	width: 580px; height: 32px;
+	left: 160px; top: 0;
+	/*border-right: 1px solid #a5a5a5;
+	box-shadow: inset -1px 0px 0px white;*/
+	 }
+#VCLtweetBtn {
+	position: absolute; display: block;
+	left: 10px; top: 6px;
+	width: 107px; height: 20px; }
+
+#VCLfollowBtn {
+	position: absolute; display: block;
+	font-size: 10px;
+	left: 110px; top: 5px;
+	height: 20px; }
+#VCLfollowBtn a {
+display: block; position: relative;
+white-space: nowrap;
+margin: 0;
+padding: 4px 5px;
+font-size: 12px;
+color: #666;
+line-height: 100%;
+border-radius: 3px;
+background-color: whiteSmoke;
+border: 1px solid #CCC;
+text-decoration: none;
+}
+
+#VCLglpusBtn {
+	position: absolute; display: block;
+	font-size: 10px;
+	left: 245px; top: 6px;
+	height: 20px; }
+#VCLglpusBtn a {
+display: block; position: relative;
+white-space: nowrap;
+margin: 0;
+padding: 4px 5px;
+font-size: 12px;
+color: #666;
+line-height: 100%;
+border-radius: 3px;
+background-color: whiteSmoke;
+border: 1px solid #CCC;
+text-decoration: none;
+}
+
+#VCLlikeBtn {
+	position: absolute; display: block;
+	font-size: 10px;
+	left: 130px; top: 6px;
+	height: 20px; }
+#VCLlikeBtn a {
+display: block; position: relative;
+white-space: nowrap;
+margin: 0;
+padding: 4px 5px;
+font-size: 12px;
+color: #666;
+line-height: 100%;
+border-radius: 3px;
+background-color: whiteSmoke;
+border: 1px solid #CCC;
+text-decoration: none;
+}
+
+#VCLcounter {
+	position: absolute; display: block;
+	white-space: nowrap;
+	left: 490px; top: 5px;
+	margin: 0; padding: 4px 6px;
+	font-size: 12px; color: #666666;
+	line-height: 100%;
+	border-radius: 3px;
+	background-color: #f5f5f5;
+	border: 1px solid #cccccc;
+	z-index: 100;
+}
+#VCLfooterCNT {
+	position: absolute; display: block;
+	margin: 0; padding: 0;
+	left: 860px;
+	top: 6px;
+	width: 325px;
+	height: 20px;
+	background-color: #d0d0d0;
+	z-index: 999;
+}
+#VCLsubmit {
+	position: absolute;
+	display: block;
+	white-space: nowrap;
+	width: 250px;
+	left: 5px;
+	margin: 0; padding: 4px 0 5px;
+	font-size: 12px;
+	font-weight: bold;
+	color: white;
+	line-height: 100%;
+	text-align: center;
+	text-decoration: none;
+	border-radius: 3px;
+	background-color: #f33;
+	box-shadow: inset 0px -1px 0px white;
+}
+#actionBTN {
+	position: absolute;
+	display: block;
+	left: 260px;
+	margin: 0; padding: 0;
+	width: 20px; height: 21px;
+	border-left: 10px solid #d0d0d0;
+	border-right: 5px solid #d0d0d0;
+	background-image: url(../images/vocalendar-titlelogo-revb.png);
+	background-position: -305px -85px;
+	background-repeat: no-repeat;
+	cursor: pointer;
+}
+#actionBTNon {
+	position: relative; display: block;
+	margin: 0; padding: 0;
+	width: 20px; height: 21px;
+	background-image: url(../images/vocalendar-titlelogo-revb.png);
+	background-position: -325px -85px;
+	background-repeat: no-repeat;
+	opacity: 0;
+	cursor: pointer;
+}
+
+/* liScroll styles */
+#VCLtickerTitle {
+	position: absolute; display: block;
+	left: 770px; top: 6px;
+	padding: 4px 5px;
+	font-size: 12px; font-weight: bold;
+	color: #666666;
+	border-radius: 3px;
+	background-color: white; }
+#VCLtickerContainer {
+	position: absolute;
+	left: 860px; top: 0px;
+	display: none;
+}
+#VCLtickerContainer { /* the outer div with the black border */
+width: 295px; 
+height: 14px; 
+margin: 7px 0 0; 
+padding: 0;
+overflow: hidden; 
+}
+.tickercontainer .mask { /* that serves as a mask. so you get a sort of padding both left and right */
+position: relative;
+left: 0px;
+top: 0px;
+width: 295px;
+overflow: hidden;
+}
+ul.newsticker { /* that's your list */
+position: relative;
+left: 295px;
+font: normal 12px Verdana;
+list-style-type: none;
+margin: 0;
+padding: 0;
+
+}
+ul.newsticker li {
+	float: left;
+	margin: 0;
+	padding: 0 10px;
+	letter-spacing: -1px;
+	color: #555555; }
+ul.newsticker a {
+	white-space: nowrap;
+	padding: 0;
+	color: #555555;
+	text-decoration: none;
+	margin: 0 0 0 0; }
+ul.newsticker span {
+	margin: 0 0 0 0; }
+ul.newsticker .gcf-item-date-block {
+	color: #999999; }
+
+/*** 検索結果 ***/
+#VS_resultContainer {
+	position: relative;
+	display: none;
+	margin: 20px 0 20px; padding: 0px;
+	width: 1150px;
+	min-height: 650px;
+	font-size: 14px; color: #666666; line-height: 125%;
+}
+#VS_resultContainer .events {
+}
+#VCLsearchResultTitle {
+	margin: 0 0 30px;
+	padding: 0 0 0 30px;
+	font-size: 32px;
+	font-weight: normal;
+	color: #666;
+	line-height: 100%;
+	text-shadow: 0px 1px 0px white;
+}
+#VCLsearchIndicator {
+	position: absolute;
+	left: 525px;
+	top: 250px;
+	width: 100px;
+	height: 100px;
+	text-align: center;
+	vertical-align: bottom;
+}
+#searchCloseBTN {
+	position: absolute; display: block;
+	margin: 0; padding: 0;
+	left: 0px; top: 7px;
+	width: 20px; height: 21px;
+	background-image: url(../images/vocalendar-titlelogo-revb.png);
+	background-position: -305px -85px;
+	background-repeat: no-repeat;
+	cursor: pointer;
+}
+#noreslut {
+	display: none;
+	margin: 200px auto 0;
+	width: 400px;
+	padding: 30px 50px;
+	font-size: 24px;
+	line-height: 100%;
+	text-shadow: 0px 1px 0px white;
+	color: #666;
+	text-align: center;
+	background-color: white;
+	opacity: 0.8;
+	border-radius: 3px;
+	border: 1px solid #999;
+	box-shadow: 0px 0px 10px #ccc;
+}
+.VCLevent {
+	position: relative; display: block;
+	margin: 0 10px 10px 0; padding: 0 0 0 100px;
+	list-style-type: none;
+	width: 270px;
+	height: 120px;
+	word-wrap: break-word;
+	font-size: 12px;
+	background-color: #fff;
+	border: 1px solid #777;
+	border-radius: 2px;
+	box-shadow: 0px 0px 5px #999;
+	float: left;
+}
+.VCLevent.c3 {
+	margin-right: 0;
+}
+.VCLevent .header {
+	width: 170px;
+	height: 120px;
+	overflow: hidden;
+}
+.VCLevent .content {
+	position: absolute;
+	display: none;
+	margin-bottom: 20px;
+	padding: 10px;
+	width: 350px;
+	left: -1px;
+	top: 120px;
+	color: #555;
+	font-size: 12px;
+	line-height: 140%;
+	text-shadow: 0px 1px 0px white;
+	border: 1px solid #777;
+	border-radius: 0px 0px 5px 5px;
+	background-color: #f0f0f0;
+	z-index: 9999;
+	box-shadow: 0px 6px 7px #555;
+}
+.VCLevent .content:before {
+    content: ' ';
+    height: 0;
+    position: absolute;
+    width: 0;
+    border: 10px solid transparent;
+    border-bottom-color: #777;
+    top: -20px;
+    left: 50%;
+    margin-left: -10px;
+}
+.VCLevent .content:after {
+    content: ' ';
+    height: 0;
+    position: absolute;
+    width: 0;
+    border: 10px solid transparent;
+    border-bottom-color: #f0f0f0;
+    top: -19px;
+    left: 50%;
+    margin-left: -10px;
+}
+.content a {
+	color: #41A587;
+	font-weight: bold;
+}
+.VCLevent .title {
+	font-size: 13px;
+	line-height: 130%;
+	margin: 5px;
+	padding: 0;
+	color: #555;
+}
+.VCLevent .start {
+	margin: 0px 10px 3px;
+}
+.VCLevent .end {
+	margin: 0px 10px 5px;
+}
+.VCLevent .date {
+	margin: 0 5px 0 0;
+	padding: 0;
+	font-size: 12px;
+	line-height: 100%;
+	color: #999;
+	float: left;
+}
+.VCLevent .start .date:before {
+	content: "開始：";
+}
+.VCLevent .end .date:before {
+	content: "終了：";
+}
+.VCLevent .time {
+	font-size: 12px;
+	line-height: 100%;
+	color: #777;
+	font-weight: bold;
+}
+.VCLevent .where {
+	margin: 0px 10px 5px;
+	font-size: 12px;
+	line-height: 125%;
+	color: #aaa;
+}
+.VCLevent .badge {
+	position: absolute;
+	display: block;
+	width: 100px;
+	height: 120px;
+	left: 0;
+	top: 0;
+	background-color: #ccc;
+	border-radius: 2px 0px 0px 2px;
+	border-right: 1px solid #777;
+}
+.VCLevent .badge .month {
+	position: absolute;
+	display: block;
+	padding: 3px 0 5px;
+	width: 100px;
+	font-weight: normal;
+	font-size: 14px;
+	line-height: 100%;
+	color: white;
+	text-shadow: 0px -1px 0px #666;
+	text-align: center;
+	background-color: #aaa;
+}
+.VCLevent .badge .day {
+	position: absolute;
+	display: block;
+	width: 100px;
+	top: 37px;
+	margin: 0;
+	padding: 0;
+	font-weight: normal;
+	font-size: 48px;
+	font-family: Helvetica;
+	line-height: 100%;
+	text-shadow: 0px 0px 3px black;
+	color: white;
+	text-align: center;
+}
+.VCLevent .badge .dow {
+	position: absolute;
+	display: block;
+	padding: 5px 0;
+	width: 100px;
+	bottom: 0;
+	font-weight: normal;
+	font-size: 14px;
+	line-height: 100%;
+	color: white;
+	text-shadow: 0px -1px 0px #666;
+	text-align: center;
+	background-color: #aaa;
+}
+.VCLevent.sun .badge {
+	background-color: #f88;
+}
+.VCLevent.sat .badge {
+	background-color: #88f;
+}
+
+/*** ABOUTページ ***/
+#heroCNT {
+	position: relative; display: block;
+	margin: 40px 0 0; padding: 0;
+	width: 1150px; height: 500px;
+	border-radius: 5px 5px 0px 0px;
+	border-bottom: 1px solid #bbbbbb;
+	box-shadow: 0px 1px 0px white;
+	background: -moz-linear-gradient(top,  rgba(255,255,255,0.6) 0%, rgba(255,255,255,0) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0.6)), color-stop(100%,rgba(255,255,255,0))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  rgba(255,255,255,0.6) 0%,rgba(255,255,255,0) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  rgba(255,255,255,0.6) 0%,rgba(255,255,255,0) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  rgba(255,255,255,0.6) 0%,rgba(255,255,255,0) 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  rgba(255,255,255,0.6) 0%,rgba(255,255,255,0) 100%); /* W3C */
+}
+#aboutHero {
+	position: absolute; display: block;
+	margin: 0; padding: 0;
+	width: 706px; height: 410px;
+	left: 40px; top: 50px;
+}
+#aboutLead {
+	position: absolute; display: block;
+	margin: 0; padding: 0;
+	width: 380px; height: 274px;
+	left: 715px; top: 100px;
+}
+#aboutShadow {
+	position: absolute; display: block;
+	margin: 0; padding: 0;
+	width: 1150px;
+	left: 0; bottom: 0;
+}
+#ppCNT {
+	position: relative; display: block;
+	margin: 0; padding: 0;
+	width: 460px;
+	float: left;
+}
+#ppCNT01 {
+	position: relative; display: block;
+	margin: 30px 0 0; padding: 0;
+	font-size: 18px; line-height: 100%; color: #666666;
+	font-weight: bold; text-shadow: 0px 1px 0px white;
+}
+#ppCNT02 {
+	margin: 30px 0px 0px; padding: 0;
+}
+#ppCNT02 li {
+	list-style-type: none;
+	margin: 0; padding: 0;
+	font-size: 18px; line-height: 150%; color: #555555;
+	font-weight: normal; text-shadow: 0px 1px 0px white;
+}
+#ppCNT03 {
+	position: relative; display: block;
+	margin: 30px 0 0; padding: 0; 
+	font-size: 14px; line-height: 140%; color: #666666;
+	font-weight: normal; text-shadow: 0px 1px 0px white;
+}
+.InfoBox {
+	position: relative; display: block;
+	margin: 30px 0 30px 30px; padding: 0;
+	width: 310px; height: 250px;
+	background-color: #f2f2f2;
+	border-radius: 5px;
+	box-shadow: 0px 0px 5px gray;
+	float: left;
+}
+.InfoBox.right {
+	border-right: 0px; right: 0px;
+	float:right;
+}
+.InfoBoxH2 {
+	position: relative; display: block;
+	margin: 2px 2px 0px; padding: 16px 0 0;
+	height: 34px;
+	border-radius: 3px 3px 0px 0px;
+	background-color: #666666;
+	font-size: 18px; font-weight: normal; color: white;
+	text-align: center; text-shadow: 0px -1px 0px black;
+}
+.InfoBoxP {
+	position: relative; display: block;
+	margin: 20px 20px 0px; padding: 0px;
+	border-radius: 3px 3px 0px 0px;
+	font-size: 14px; font-weight: normal; color: #666666; line-height: 150%;
+	text-align: left; text-shadow: 0px 1px 0px white;
+}
+.InfoBoxP a {
+	color: inherit; text-decoration: underline;
+}
+
+
+/*** GALLERYページ ***/
+#galleryCNT {
+	position: relative; display: block;
+	margin: 40px 0 0; padding: 0;
+	width: 1150px;
+}
+#galleryCNT li {
+	position: relative; display: block;
+	list-style: none;
+	margin: 0 14px 0 0; padding: 0;
+	width: 277px; height: 427px;
+	float: left;
+}
+#galleryCNT li.ftc {
+	margin-right: 0px;
+}
+#galleryCNT li img.thumbnail {
+	position: absolute; display: block;
+	margin: 0; padding: 0;
+	width: 275px; height: 275px;
+	left: 0; top: 0px;
+	border-radius: 5px;
+	border: 1px solid #999999;
+	box-shadow: 0px 0px 1px gray;
+}
+#galleryCNT li h2 {
+	position: absolute; display: block;
+	margin: 0; padding: 0;
+	width: 275px; height: 60px;
+	left: 0px; top: 293px;
+}
+#galleryCNT li p.credit {
+	position: absolute; display: block;
+	margin: 0; padding: 0;
+	width: 275px;
+	left: 0px; top: 355px;
+	font-size: 12px; font-weight: normal; line-height: 135%;
+	color: #999999; text-shadow: 0px 1px 0px white;
+}
+
+/*** 詳細ページ ***/
+#VCLsearchDetailTitle {
+	margin: 0 0 30px;
+	padding: 0 0 0 0;
+	font-size: 32px;
+	font-weight: normal;
+	color: #666;
+	line-height: 100%;
+	text-shadow: 0px 1px 0px white;
+}
+#VS_detailContainer {
+	margin: 0 20% 0;
+	display: relative;
+}
+#VS_detailContainer .VCLevent {
+	width: 80%;
+	margin: 0;
+}
+#VS_detailContainer .content {
+	display: inherit;
+	margin: 0 0 100px;
+	right: 0;
+	left: 0;
+	width: auto;
+}
