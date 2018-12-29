@@ -71,14 +71,20 @@ nav {
 	position: absolute; display: block;
 	margin: 0; padding: 0;
 	left: 350px; }
-nav ul li {
+nav ul li#nav01,
+nav ul li#nav02,
+nav ul li#nav03
+ {
 	position: relative; display: block;
 	margin: 0; padding: 0;
 	list-style-type: none;
 	background-image: url(../images/vocalendar-titlelogo-revb.png);
 	background-repeat: no-repeat;
 	float: left; }
-nav ul li a {
+nav ul li#nav01 a,
+nav ul li#nav02 a,
+nav ul li#nav03 a
+ {
 	position: relative; display: block;
 	margin: 0; padding: 0;
 	background-image: url(../images/vocalendar-titlelogo-revb.png);
@@ -107,6 +113,18 @@ nav ul li#nav02 a {
 nav ul li#nav03 a {
 	width: 92px; height: 88px;
 	background-position: -594px -88px; }
+
+/*** Store Badges ***/
+nav li#googleplay,
+nav li#appstore {
+	position: relative; display: block;
+	margin: 0; padding: 0;
+	list-style-type: none;
+	float: left;
+	padding-top: 27px;
+	background: none;
+	padding-left: 20px;
+}
 
 /*** 真サーチ ***/
 #searchCNT {
