@@ -100,9 +100,11 @@
 			<h1 id="vocalendarTitle"><a href="/">VOCALENDAR（ボカレンダー）</a></h1>
 			<nav>
 				<ul>
-					<li id="nav01"><a href="about/">about</a></li>
+					<li class="nav" id="nav01"><a href="about/">about</a></li>
 					<!--<li id="nav02"><a href="#">event portal</a></li>//-->
-					<li id="nav03"><a href="gallery/">gallery</a></li>
+					<li class="nav" id="nav03"><a href="gallery/">gallery</a></li>
+					<li id="googleplay"><a href="https://play.google.com/store/apps/details?id=jp.vocalendar" target="_blank"><img src="../images/google-play-badge.png" height="40px" alt="Get it on Google Play"></a></li>
+					<li id="appstore"><a href="https://itunes.apple.com/jp/app/vocalendar/id1428412596" target="_blank"><img src="../images/app-store-badge.png" height="40px" alt="Download on the App Store"></a></li>
 				</ul>
 			</nav>
 			

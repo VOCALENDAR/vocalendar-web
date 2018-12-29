@@ -71,7 +71,7 @@ $(function() {
 	//	fitStatusBar();
 	//});
 	
-	$("nav ul li a").hover(
+	$("nav ul li.nav a").hover(
 		function(){
 			$(this).stop();
 			$(this).animate({opacity:1},300);
