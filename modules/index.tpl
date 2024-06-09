@@ -121,10 +121,14 @@
 			
 		</header>
 		
+		<!--<section id="notice" style="width:875px;">
+			<p style="font-size: .85rem; line-height:1.4em;">【お知らせ】新型コロナウイルス感染症の発生に関連して、中止・延期となるイベントが相次いでいます。<br>VOCALENDARに掲載されているイベントにつきましても、公式の最新情報を必ずご確認ください。</p>//-->
+		</section>
+		
 		<section id="googleCalCNT">
-		<!--- width 900 to 850 //-->
-			<iframe class="vcl01" src="/modules/gcalendar-wrapper-tsubaki.php?src=0mprpb041vjq02lk80vtu6ajgo%40group.calendar.google.com&amp;color=%230F4B38&amp;ctz=Asia%2FTokyo&amp;showTitle=0&amp;showCalendars=0&amp;showTz=0&amp;showPrint=0&amp;mode=MONTH&amp;height=650&amp;wkst=2&amp;bgcolor=%23FFFFFF" style=" border-width:0 " width="875" height="650" frameborder="0" scrolling="no"></iframe>
-			<!--<iframe class="vcl01" src="/gcalendar-wrapper-tsubaki.php?src=0mprpb041vjq02lk80vtu6ajgo%40group.calendar.google.com&amp;color=%230F4B38&amp;src=5fsoru1dfaga56mcleu5mp76kk%40group.calendar.google.com&amp;color=%23AB8B00&amp;ctz=Asia%2FTokyo&amp;showTitle=0&amp;showCalendars=1&amp;showTz=0&amp;showPrint=0&amp;height=650&amp;wkst=2&amp;bgcolor=%23FFFFFF" style=" border-width:0 " width="875" height="650" frameborder="0" scrolling="no"></iframe>//-->
+		<!-- width 900 to 850 //-->
+			<iframe class="vcl01" src="/modules/gcalendar-wrapper-tsubaki.php?src=pcg8ct8ulj96ptvqhllgcc181o%40group.calendar.google.com&amp;color=%230F4B38&amp;ctz=Asia%2FTokyo&amp;showTitle=0&amp;showCalendars=0&amp;showTz=0&amp;showPrint=0&amp;mode=MONTH&amp;height=650&amp;wkst=2&amp;bgcolor=%23FFFFFF" style=" border-width:0 " width="875" height="650" frameborder="0" scrolling="no"></iframe>
+			<!--<iframe class="vcl01" src="/gcalendar-wrapper-tsubaki.php?src=pcg8ct8ulj96ptvqhllgcc181o%40group.calendar.google.com&amp;color=%230F4B38&amp;src=5fsoru1dfaga56mcleu5mp76kk%40group.calendar.google.com&amp;color=%23AB8B00&amp;ctz=Asia%2FTokyo&amp;showTitle=0&amp;showCalendars=1&amp;showTz=0&amp;showPrint=0&amp;height=650&amp;wkst=2&amp;bgcolor=%23FFFFFF" style=" border-width:0 " width="875" height="650" frameborder="0" scrolling="no"></iframe>//-->
 		</section>
 		
 		<!-- 検索結果エリア //-->
