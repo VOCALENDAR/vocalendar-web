@@ -2,6 +2,16 @@
 <html prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#" lang="ja">
 
 <head>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-N9K7NP0Q70"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-N9K7NP0Q70');
+</script>
 	
 	<!-- PAGE ATTRIBUTEs //-->
 	<meta charset="UTF-8">
@@ -21,11 +31,6 @@
 	<meta name="viewport" content="width=1280" />
 	<title>ボーカロイド/UTAU関連のイベントカレンダー | VOCALENDAR（ボカレンダー）</title>
 	
-	<!-- IE HTML5 ENABLER //-->
-	<!--[if lt IE 9]>
-	<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
-	<![endif]-->
-	
 	<!-- CSS FILEs //-->
 	<link rel="stylesheet" href="/css/html5reset-1.6.1.css" media="all" />
 	<link rel="stylesheet" href="/css/project-vocalendar-august2012.css?20140309b" media="all" />
@@ -33,10 +38,9 @@
 	<!-- Google AJAX LIBRARIEs //-->
 	<!-- 使用する場合はそれぞれの読み込み箇所を書き換え //-->
 	<!-- ホストされているバージョンに注意 //-->
-	<!-- http://code.google.com/intl/ja/apis/ajaxlibs/ //-->
-	<script src="//www.google.com/jsapi"></script>
-	<script>google.load("jquery", "1.7.0");</script>
-	<script>google.load("jqueryui", "1.8.16");</script>
+	<!-- http://code.google.com/intl/ja/apis/ajaxlibs/ -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js"></script>
 	<script src="js/jquery.easing.js"></script>
 	<script src="js/jquery.gcal_flow.js"></script>
 	<script src="js/jquery.dropkick-1.0.0.js"></script>
@@ -52,33 +56,6 @@
 	<link rel="stylesheet" href="/js/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.2" type="text/css" media="screen" />
 	<script type="text/javascript" src="/js/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.2"></script>
 	<script type="text/javascript" src="/js/fancybox/helpers/jquery.fancybox-media.js?v=1.0.0"></script>
-	
-	<!-- IE8 ALERT //-->
-	<script type="text/javascript" src="/js/jquery.iealert.js"></script>
-	<link rel="stylesheet" type="text/css" href="/js/iealert/style.css" />
-	
-	<!-- Google Analytics //-->
-	<script type="text/javascript">
-	var _gaq = _gaq || [];
-	_gaq.push(['_setAccount', 'UA-28637999-1']);
-	_gaq.push(['_setDomainName', 'vocalendar.jp']);
-	_gaq.push(['_trackPageview']);
-	(function() {
-	var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-	ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-	var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-	})();
-	</script>
-	<!-- Google PlusOne //-->
-	<script type="text/javascript">
-	window.___gcfg = {lang: 'ja'};
-	
-	(function() {
-	var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
-	po.src = 'https://apis.google.com/js/plusone.js';
-	var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
-	})();
-	</script>
 	
 </head>
 
@@ -104,21 +81,9 @@
 					<!--<li id="nav02"><a href="#">event portal</a></li>//-->
 					<li class="nav" id="nav03"><a href="gallery/">gallery</a></li>
 					<li id="googleplay"><a href="https://play.google.com/store/apps/details?id=jp.vocalendar" target="_blank"><img src="../images/google-play-badge.png" height="40px" alt="Get it on Google Play"></a></li>
-					<li id="appstore"><a href="https://itunes.apple.com/jp/app/vocalendar/id1428412596" target="_blank"><img src="../images/app-store-badge.png" height="40px" alt="Download on the App Store"></a></li>
+
 				</ul>
 			</nav>
-			
-			<!--<section id="searchCNT">
-				<form id="VS_conditionContainer" name='VS_searchCondition'>
-				<select name='VS_selectCalendar' id='VS_selectCalendar' class="dropkick" >
-				<option value='0'>メイン</option>
-				<option value='1'>放送系</option>
-				</select>
-				<input type='text' name='VS_searchstring' id='VS_searchstring' placeholder="VOCALENDAR検索" autofocus />
-				<input type='button' name='VS_execute' id='VS_execute' value='検索' onClick="_gaq.push(['_trackEvent', 'Search', 'Search']);" />
-				</form>
-			</section>//-->
-			
 		</header>
 		
 		<!--<section id="notice" style="width:875px;">
@@ -127,8 +92,7 @@
 		
 		<section id="googleCalCNT">
 		<!-- width 900 to 850 //-->
-			<iframe class="vcl01" src="/modules/gcalendar-wrapper-tsubaki.php?src=pcg8ct8ulj96ptvqhllgcc181o%40group.calendar.google.com&amp;color=%230F4B38&amp;ctz=Asia%2FTokyo&amp;showTitle=0&amp;showCalendars=0&amp;showTz=0&amp;showPrint=0&amp;mode=MONTH&amp;height=650&amp;wkst=2&amp;bgcolor=%23FFFFFF" style=" border-width:0 " width="875" height="650" frameborder="0" scrolling="no"></iframe>
-			<!--<iframe class="vcl01" src="/gcalendar-wrapper-tsubaki.php?src=pcg8ct8ulj96ptvqhllgcc181o%40group.calendar.google.com&amp;color=%230F4B38&amp;src=5fsoru1dfaga56mcleu5mp76kk%40group.calendar.google.com&amp;color=%23AB8B00&amp;ctz=Asia%2FTokyo&amp;showTitle=0&amp;showCalendars=1&amp;showTz=0&amp;showPrint=0&amp;height=650&amp;wkst=2&amp;bgcolor=%23FFFFFF" style=" border-width:0 " width="875" height="650" frameborder="0" scrolling="no"></iframe>//-->
+			<iframe class="vc101" src="https://calendar.google.com/calendar/embed?height=650&wkst=1&ctz=Asia%2FTokyo&showTitle=0&showCalendars=0&src=cGNnOGN0OHVsajk2cHR2cWhsbGdjYzE4MW9AZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&color=%2333b679" style="border-width:0" width="875" height="650" frameborder="0" scrolling="no"></iframe>
 		</section>
 		
 		<!-- 検索結果エリア //-->
