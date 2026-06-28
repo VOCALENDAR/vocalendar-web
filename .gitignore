@@ -1,0 +1,12 @@
+beta
+test
+
+.env
+.DS_Store
+
+*.swp
+
+debug*
+
+editors
+storage
