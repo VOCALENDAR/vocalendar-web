@@ -1,3 +1,7 @@
 [submodule "search"]
 	path = search
 	url = https://github.com/vocalendar/vocalendar-search.git
+
+[submodule "amazon-search"]
+	path = editors/amazon-search
+	url = https://github.com/VOCALENDAR/amazon-search.git

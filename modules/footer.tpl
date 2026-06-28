@@ -48,7 +48,7 @@
 				<p class="menu">VOCALENDAR CONTENTS</p>
 				<!--<p class="node"><a href="/blog/">VOCALENDAR BLOG</a></p>//-->
 				<p class="node"><a href="/vocalo-miraiyosou/" target="_blank">トークセッション「ボカロ未来予想」</a></p>
-				<p class="node"><a href="http://bit.ly/vcl90010" target="_blank">VOCALENDAR for Android</a></p>
+				<p class="node"><a href="https://play.google.com/store/apps/details?id=jp.vocalendar" target="_blank">VOCALENDAR for Android</a></p>
 				<p class="node"><a href="/miraikouro/">未来光路～ver.Miku～</a></p>
 				<!--
 				<p class="node" style="line-height:11px;margin-top:2px;"><span style="font-size:10px;font-weight:bold;color:gray;">SNOW MIKU 2014</span><br>
@@ -58,9 +58,9 @@
 			<a href="http://bit.ly/vcl90020" target="_blank" alt="SNOW MIKU 2015 イベントスケジュール"><img src="/images/banners/vocalendar-banner-snowmiku2015-eventschedule.jpg" alt="SNOW MIKU 2015 イベントスケジュール" /></a>
 			<a href="http://bit.ly/vcl90019" target="_blank" alt="SNOW MIKU 2015 グッズ販売リスト"><img src="/images/banners/vocalendar-banner-snowmiku2015-goodslist.jpg" alt="SNOW MIKU 2015 グッズ販売リスト" /></a>//-->
 			<a href="/vocalo-miraiyosou/" target="_blank"><img src="/images/banners/vocalendar-banner-miraiyosou.png" alt="トークセッション「ボカロ未来予想」アーカイブサイト" width="570"></a>
-			<a href="http://bit.ly/vcl90012" target="_blank"><img src="/images/banners/vocalendar-banner-miraikouro.jpg" alt="VOCALENDAR×WONDERFUL★OPPORTUNITY! 『未来光路』特設ページ" /></a>
+			<a href="/miraikouro/" target="_blank"><img src="/images/banners/vocalendar-banner-miraikouro.jpg" alt="VOCALENDAR×WONDERFUL★OPPORTUNITY! 『未来光路』特設ページ" /></a>
 			<!--<a href="http://bit.ly/vcl90011" target="_blank"><img src="/images/banners/vocalendar-banner-blog.jpg" alt="VOCALENDAR Blog" /></a>//-->
-			<a href="http://bit.ly/vcl90010" target="_blank"><img src="/images/banners/vocalendar-banner-forandroid.jpg" alt="VOCALENDAR for Android 好評配信中！" /></a>
+			<a href="https://play.google.com/store/apps/details?id=jp.vocalendar" target="_blank"><img src="/images/banners/vocalendar-banner-forandroid.jpg" alt="VOCALENDAR for Android 好評配信中！" /></a>
 			</div>
 		</section>
 	</div>
